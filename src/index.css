@@ -86,7 +86,47 @@ body {
   .signin-button:hover {
     background-color: #272326;
   }
-  /*  */
+  /* Navbar */
+
+  .Nav-bar {
+    display: flex;
+    background-color: #720a64;
+    height: 50px;
+  }
+  .nav {
+    display: flex;
+    list-style: none;
+    padding-left: 10px;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-li {
+    padding: 10px;
+    user-select: none;
+    color: #13254d;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+    .nav-li:hover {
+    color: #CCCCCB;
+  }
+  .username {
+    user-select: none !important;
+    cursor: default !important;
+    color: violet;
+  }
+  .activeted {
+    color: #CCCCCB !important;
+  }
+  
+
+
+
+
+
+
+
+
   
   hr {
     box-sizing: border-box;
@@ -142,10 +182,6 @@ body {
     padding-left: 0 !important;
   }
   
-  .active {
-    color: #CCCCCB !important;
-  }
-  
   .scale-down {
     width: 25px !important;
     height: 25px !important;
@@ -156,34 +192,6 @@ body {
     height: 35px !important;
   }
   
-  .nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    padding-left: 10px;
-    text-decoration: none;
-  }
-  
-  .nav-li {
-    padding: 10px;
-    user-select: none;
-    cursor: pointer;
-    color: #808080;
-    line-height: 1.5;
-    text-decoration: none;
-  }
-  
-  .nav-li:hover {
-    color: #CCCCCB;
-  }
-  
-  .title-bar {
-    display: flex;
-    background-color: #24292E;
-    margin: 0;
-    height: 44px;
-  }
   
   .nav-account {
     margin-left: auto;
@@ -204,15 +212,7 @@ body {
     cursor: pointer;
     color: #808080;
   }
-  
-  .user-name {
-    user-select: none !important;
-    cursor: default !important;
-  }
-  
-  .user-name:hover {
-    color: #808080;
-  }
+
   
   .poll-
    {

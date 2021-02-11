@@ -24,8 +24,8 @@ class Logout extends Component {
                                     alt={`Avatar of ${avatar}`}
                                     className='profile-pic scale-down'/>
                     </li>
-                    <li className='padding-zero user-name nav-li'>
-                        {authedUser}
+                    <li className='padding-zero username nav-li'>
+                       Hello {authedUser}
                     </li>
                 </ul>
             </Fragment>
