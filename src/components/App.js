@@ -8,6 +8,7 @@ import QuestionResults from "./QuestionResults";
 import NewQuestion from "./NewQuestion";
 import Leaderboard from "./Leaderboard";
 import NotFoundPage from "./NotFoundPage";
+import { handleInitialQuestions } from '../actions/shared'
 
 class App extends Component {
   state = {
@@ -19,6 +20,7 @@ class App extends Component {
     this.props.dispatch(handleInitialUsers(authedUser)).then(() => {
       this.setState({ fetched: true });
     });
+    this.props.dispatch(handleInitialQuestions());
   }
 
   render() {

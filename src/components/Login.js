@@ -14,7 +14,7 @@ class Login extends Component {
 
         if (userSelected) {
             auth(userSelected)
-        } else alert('Select a user!')
+        } else alert('Please Select a user First!')
 
     }
 
