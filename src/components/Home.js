@@ -60,18 +60,18 @@ class Home extends Component {
     }
 }
 
-function mapStateToProps ({ polls, authedUser, users, loadingBar }) {
+function mapStateToProps ({ questions, authedUser, users, loadingBar }) {
     const user = users[authedUser]
-
-    const answeredPolls = Object.keys(polls).length !== 0
+console.log(questions);
+    const answeredPolls = Object.keys(questions).length !== 0
         ? Object.keys(user.answers)
-            .sort((a,b) => polls[b].timestamp - polls[a].timestamp)
+            .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
         : []
 
-    const unansweredPolls = Object.keys(polls).length !== 0
-        ? Object.keys(polls)
+    const unansweredPolls = Object.keys(questions).length !== 0
+        ? Object.keys(questions)
             .filter(pollID => !answeredPolls.includes(pollID))
-            .sort((a,b) => polls[b].timestamp - polls[a].timestamp)
+            .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
         : []
 
     return {

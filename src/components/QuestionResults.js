@@ -114,9 +114,9 @@ class QuestionResults extends Component {
     }
 }
 
-function mapStateToProps ({authedUser, polls, users}, props) {
+function mapStateToProps ({authedUser, questions, users}, props) {
     const { question_id } = props.match.params
-    const poll = polls[question_id]
+    const poll = questions[question_id]
     const authorAvatar = users[poll.author].avatarURL
     const author = users[poll.author].id
     const timestamp = formatDate (poll.timestamp)
@@ -137,7 +137,7 @@ function mapStateToProps ({authedUser, polls, users}, props) {
         isTwoAnswered,
         poll,
         users,
-        polls,
+        questions,
         authedUser,
         question_id,
     }

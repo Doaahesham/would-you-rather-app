@@ -32,8 +32,8 @@ class Question extends Component {
     }
 }
 
-function mapStateToProps ({authedUser, polls}, { id }) {
-    const poll = polls[id]
+function mapStateToProps ({authedUser, questions}, { id }) {
+    const poll = questions[id]
 
     return {
         authedUser,

@@ -5,7 +5,7 @@ export const ADD_USER_Question = 'ADD_USER_Question'
 export function receiveUsers (users) {
     return {
         type: RECEIVE_USERS,
-        ...users
+        users
     }
 }
 

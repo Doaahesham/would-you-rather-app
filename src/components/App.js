@@ -1,4 +1,3 @@
-  
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
@@ -16,7 +15,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const authedUser = this.props.authedUser ? authedUser : null;
+    const authedUser = this.props.authedUser ? this.props.authedUser : null;
     this.props.dispatch(handleInitialUsers(authedUser)).then(() => {
       this.setState({ fetched: true });
     });
@@ -37,7 +36,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/add" exact component={NewQuestion} />
                 <Route path="/questions/:question_id" component={QuestionResults} />
-                <Route path="/leaderboard" exact component={Leaderboard} />
+                <Route path="/Leaderboard" exact component={Leaderboard} />
                 <Route component={NotFoundPage} />
               </Switch>
             </div>

@@ -3,6 +3,7 @@ import { RECEIVE_USERS, USER_ANSWER, ADD_USER_Question } from '../actions/users'
 export default function user(state= {}, action) {
     switch(action.type) {
         case RECEIVE_USERS:
+            // console.log(action.users);
             return {
                 ...state,
                 ...action.users

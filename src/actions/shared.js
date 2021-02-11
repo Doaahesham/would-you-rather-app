@@ -16,6 +16,7 @@ export function handleInitialQuestions () {
         dispatch(showLoading())
         return _getQuestions()
             .then((questions) => {
+                console.log(questions);
                 dispatch(receiveQuestions(questions))
                 dispatch(hideLoading())
             })
@@ -27,6 +28,7 @@ export function handleInitialUsers (AUTHED_ID) {
         dispatch(showLoading())
         return _getUsers()
             .then((users) => {
+                // console.log(users);
                 dispatch(receiveUsers(users))
                 dispatch(auth(AUTHED_ID))
                 dispatch(hideLoading())

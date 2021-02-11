@@ -1,112 +1,92 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #1D1F23;
-    color: #9E9D9E; 
+    font-family:"Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    color: #d889ba; 
   }
-  
-  p {
-    margin: 0;
-    font-size: 15px;
+
+  /* login */
+  .login {
+    width: 500px;
+    height:80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    
   }
-  
-  .form {
-    width: 400px;
-    height:auto;
-    border-radius: 15px;
-    border: 1px solid #191919;
-    box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.25)
+  .head {
+    position: relative;
+    background-color: #692886;
+    width: 100%;
+    height: 75px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    font-weight: bolder;
   }
-  
-  .signin-form {
+  .title {
     position: absolute;
     margin: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 15px;
+    user-select: none;
   }
-  
+  .login-body {
+    background-color: #430161;
+    width: 100%;
+    height: 85%;
+    border-radius: 0 0 15px 15px;
+  }
+  .sigin {
+    display: block;
+    font-size: 17px;
+    padding: 30px;
+    user-select: none;
+  }
+  .form {
+    padding: 50px 0 0 100px;
+  }
+  .pic {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    user-select: none;
+    margin-left: 70px;
+    padding: 5px;
+  }
+  .select-user {
+    position: absolute;
+    top: 110px;
+    background-color: #7c2c8b;
+    color: #d889ba;
+    margin-top:120px ;
+    margin-right:100px ;
+  }
   .question-form {
     display: flex;
     flex-wrap: wrap;
   }
   
-  .form-header {
-    position: relative;
-    background-color: #24292E;
-    width: 100%;
-    height: 35px;
-    border-radius: 15px 15px 0 0;
-    text-decoration: none;
-  }
-  
-  .form-body {
-    background-color: #2A2F33;
-    width: 100%;
-    height: 85%;
-    border-radius: 0 0 15px 15px;
-  }
-  
-  .form-title {
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
-    user-select: none;
-    text-decoration: none;
-  }
-  
-  .sigin-body-p {
-    display: block;
-    font-size: 14px;
-    padding: 20px;
-    user-select: none;
-  }
-  
-  .profile-pic {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    user-select: none;
-  }
-  
-  .signin-body-form {
-    padding: 10px 0 0 35px;
-  }
-  
-  .button {
-    color: #FFFFFF;
-    background-color: #26AA91;
-    height: 30px;
+  .signin-button {
+    color: #d889ba;
+    background-color: #720a64;
+    height: 40px;
     width: 75px;
-    font-size: 12px;
-    border-radius: 2px;
-    border-style: none;
+    font-size: 14px;
+    border-radius: 5px;
     user-select: none;
-    cursor: pointer;
-    box-shadow: 0px 1px 25px 2px rgba(0, 0, 0, 0.15); 
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 20px;
-    margin-left: 300px;
+    margin-left: 200px;
   }
-  
-  .sign-in-button:hover {
-    background-color: rgb(49, 202, 174);
+  .signin-button:hover {
+    background-color: #272326;
   }
-  
-  .login-user-select {
-    position: absolute;
-    top: 110px;
-    background-color: #2A2F33;
-    border: none;
-    color: #9E9D9E;
-    margin-left: 20px;
-  }
-  
+  /*  */
   
   hr {
     box-sizing: border-box;
@@ -234,7 +214,8 @@ body {
     color: #808080;
   }
   
-  .poll-form {
+  .poll-
+   {
     color: inherit;
     user-select: none;
     cursor: pointer;

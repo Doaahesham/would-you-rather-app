@@ -4,46 +4,46 @@ import { auth } from '../actions/auth'
 
 class Login extends Component {
     state = {
-        selectedUser: ''
+        userSelected: ''
     }
 
-    handleLogin = (e) => {
-        e.preventDefault()
-        const { selectedUser } = this.state
+    handleLogin = (event) => {
+        event.preventDefault()
+        const { userSelected } = this.state
         const { auth } = this.props
 
-        if (selectedUser) {
-            auth(selectedUser)
+        if (userSelected) {
+            auth(userSelected)
         } else alert('Select a user!')
 
     }
 
-    onSelectUser = (selectedUser) => this.setState({ selectedUser })
+    onSelected = (userSelected) => this.setState({ userSelected })
 
     render () {
         const { users } = this.props
-        const { selectedUser } = this.state
+        const { userSelected } = this.state
 
         return (
             <Fragment>
-                <div className='form signin-form'>
-                    <div className='form-header'>
-                        <p className='form-title'>Would You Rather - login</p>
+                <div className='login'>
+                    <div className='head'>
+                        <p className='title'>Welcome to the Would You Rather App!</p>
                     </div>
-                    <div className='form-body'>
+                    <div className='login-body'>
                         <form onSubmit={this.handleLogin}>
-                            <label className='sigin-body-p'>Select a user: </label>
-                            <div className='signin-body-form'>
+                            <label className='sigin'>Please Sign in: </label>
+                            <div className='form'>
                                 <img 
-                                    src={selectedUser === '' 
+                                    src={userSelected === '' 
                                     ? 'http://www.masscue.org/wp-content/uploads/2017/03/male-no-image.jpg'
-                                    : users[selectedUser].avatarURL}
-                                    alt={users[selectedUser]}
-                                    className='profile-pic'/> 
+                                    : users[userSelected].avatarURL}
+                                    alt={users[userSelected]}
+                                    className='pic'/> 
                                     {/* {console.log(users)} */}
                                 <select 
-                                    className='login-user-select' 
-                                    onChange={(e) => this.onSelectUser(e.target.value)}>
+                                    className='select-user' 
+                                    onChange={(event) => this.onSelected(event.target.value)}>
                                     <option value=""> Select User</option>
                                     { 
                                         Object.keys(users).map(user => 
@@ -54,7 +54,7 @@ class Login extends Component {
                                 </select>                        
                             </div>
 
-                            <button className='button'>SIGN IN</button>
+                            <button className='signin-button '>SIGN IN</button>
                         </form>
                     </div>
                 </div>
@@ -65,6 +65,7 @@ class Login extends Component {
 }
 
 function mapStateToProps ({ users }) {
+    console.log(users);
     return {
         users
     }

@@ -3,6 +3,7 @@ import { RECEIVE_Questions, Question_ANSWER, ADD_Question } from '../actions/que
 export default function questions(state= {}, action) {
     switch(action.type) {
         case RECEIVE_Questions:
+            console.log(action.questions);
             return {
                 ...state,
                 ...action.questions
