@@ -12,8 +12,8 @@ class NotFoundPage extends Component {
     render() {
         return (
             <div className='center'>
-            <h1>Oops!</h1>
-            <p>We can't seem to find the page you're looking for.</p>
+            <h1>Error 404</h1>
+            <p>Page Not Found!</p>
             <p className='padding-top'>
                 <NavLink className='click-here' to='/'><button onClick={this.resetUserToNull}>click here</button></NavLink> to go back to home page
             </p>
