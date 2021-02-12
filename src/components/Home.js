@@ -6,7 +6,7 @@ import { handleInitialQuestions } from '../actions/shared'
 
 class Home extends Component {
     state = {
-        selectedTab: 'unanswered'
+        selectedPage: 'unanswered'
     }
 
     componentDidMount () {
@@ -14,45 +14,39 @@ class Home extends Component {
     }
 
     render () {
-        const { answeredPolls, unansweredPolls,loadingBar } = this.props
+        const { answeredQuestions, unansweredQuestions,loadingBar } = this.props
             return (
             <Fragment>
                 <Navbar />
-                <ul className='toggler'>
-                    <li 
-                        className={ this.state.selectedTab === 'unanswered' ? 'active' : 'li-hover'}
-                        onClick={() => {this.setState({ selectedTab: 'unanswered'})}}>
-                        Unanswered
-                    </li>
-                    <li 
-                        className={ this.state.selectedTab === 'answered' ? 'active' : 'li-hover'}
-                        onClick={() => {this.setState({ selectedTab: 'answered'})}}>
-                        Answered
-                    </li>
-                </ul>
+                <div className="note">
+                Please Click On The Card To Get Answers
+                </div>
+                {/* answered and unanswered Tab  */}
+                <ul className='pages'>
+                    <li className={ this.state.selectedPage === 'unanswered' ? 'active' : 'li-hover'}
+                        onClick={() => {this.setState({ selectedPage: 'unanswered'})}}>Unanswered </li>
+                   
+                    <li className={ this.state.selectedPage === 'answered' ? 'active' : 'li-hover'}
+                        onClick={() => {this.setState({ selectedPage: 'answered'})}}>Answered</li></ul>
                 {
-                    !loadingBar.default && Object.keys(unansweredPolls).length === 0 && this.state.selectedTab === 'unanswered'
-                    ? <p className='no-results'>no results</p>
+                    !loadingBar.default && Object.keys(unansweredQuestions).length === 0 && this.state.selectedPage === 'unanswered'
+                    ? <p className='no-results'>No Results</p>
                     : null
                 }
                 {
-                    !loadingBar.default && Object.keys(answeredPolls).length === 0 && this.state.selectedTab === 'answered'
-                    ? <p className='no-results'>no results</p>
+                    !loadingBar.default && Object.keys(answeredQuestions).length === 0 && this.state.selectedPage === 'answered'
+                    ? <p className='no-results'>No Results</p>
                     : null
                 }
                 { 
                     loadingBar.default
                     ? <p className='loading'>Loading ...</p>
-                    : this.state.selectedTab === 'unanswered' && Object.keys(unansweredPolls).length !== 0
+                    : this.state.selectedPage === 'unanswered' && Object.keys(unansweredQuestions).length !== 0
                         ? <div className='question-form margin'>
-                            {unansweredPolls.map((id) => (
-                            <Question key={id} id={id}/> ))}
-                        </div>     
-                        : this.state.selectedTab === 'answered' && Object.keys(answeredPolls).length !== 0
+                            {unansweredQuestions.map((id) => (<Question key={id} id={id}/> ))}</div>     
+                        : this.state.selectedPage === 'answered' && Object.keys(answeredQuestions).length !== 0
                         ? <div className='question-form margin'>
-                            {answeredPolls.map((id) => (
-                            <Question key={id} id={id}/> ))}
-                        </div>     
+                            {answeredQuestions.map((id) => (<Question key={id} id={id}/> ))}</div>     
                         : null
                  }             
             </Fragment>
@@ -62,21 +56,18 @@ class Home extends Component {
 
 function mapStateToProps ({ questions, authedUser, users, loadingBar }) {
     const user = users[authedUser]
-console.log(questions);
-    const answeredPolls = Object.keys(questions).length !== 0
-        ? Object.keys(user.answers)
-            .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
+// console.log(questions);
+    const answeredQuestions = Object.keys(questions).length !== 0
+        ? Object.keys(user.answers).sort((a,b) => questions[b].timestamp - questions[a].timestamp)
         : []
 
-    const unansweredPolls = Object.keys(questions).length !== 0
-        ? Object.keys(questions)
-            .filter(pollID => !answeredPolls.includes(pollID))
-            .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
+    const unansweredQuestions = Object.keys(questions).length !== 0
+        ? Object.keys(questions).filter(pollID => !answeredQuestions.includes(pollID)).sort((a,b) => questions[b].timestamp - questions[a].timestamp)
         : []
 
     return {
-        answeredPolls,
-        unansweredPolls,
+        answeredQuestions,
+        unansweredQuestions,
         loadingBar,
     }
 }

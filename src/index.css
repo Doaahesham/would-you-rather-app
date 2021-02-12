@@ -64,11 +64,6 @@ body {
   margin-top:120px ;
   margin-right:100px ;
 }
-.question-form {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .signin-button {
     color: #d889ba;
     background-color: #720a64;
@@ -115,6 +110,44 @@ body {
 .activeted {
   color: #CCCCCB !important;
 }
+/* Home */
+.note{
+  color: blueviolet;
+  text-align: center;
+  font-weight: bolder;
+  font-size: larger;
+}
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.pages li { 
+  user-select: none;
+  padding-left: 20px;
+  color: #8a205a;
+}
+.no-results {
+  padding: 20px;
+}
+.question-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 p {
   margin: 0;
   font-size: 15px;
@@ -289,20 +322,6 @@ hr {
   margin-right: 10px;
 }
 
-.toggler {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  margin-bottom: 20px;
-}
-
-.toggler li {
-  padding-left: 20px;
-  user-select: none;
-  cursor: pointer;
-  color: #808080;
-}
 
 .user-name {
   user-select: none !important;
@@ -521,9 +540,6 @@ color: #cccccb;
   padding-top: 10px;
 }
 
-.no-results {
-  padding: 20px;
-}
 
 .loading {
   font-size: 16px;
