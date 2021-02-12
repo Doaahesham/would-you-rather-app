@@ -11,20 +11,20 @@ class AddPoll extends Component {
         toHome: false,
     }
     
-    handleOptionOne = (e) => {
+    handleOptionOne = (event) => {
         this.setState({
-            optionOne: e.target.value
+            optionOne: event.target.value
         })
     }
 
-    handleOptionTwo = (e) => {
+    handleOptionTwo = (event) => {
         this.setState({
-            optionTwo: e.target.value
+            optionTwo: event.target.value
         })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
+    handleSubmited = (event) => {
+        event.preventDefault()
         const { optionOne, optionTwo} = this.state
         this.props.addQuestion(optionOne, optionTwo)
         this.setState(() => ({
@@ -42,30 +42,25 @@ class AddPoll extends Component {
         return (
             <Fragment>
                 <Navbar />
-                <div className='form margin poll-details-form'>
-                    <div className='form-header'>
-                        <p className='form-title'>Would You Rather</p>
+                <div className="margin new-Question">
+                    <div className='header'>
+                       <p className='form-title'>Would You Rather</p>
                     </div>
-                {
-                    <form onSubmit={this.handleSubmit} id='addQuestion-form' className='form-body'>
-                        <div className='input-text-container'>
-                            <textarea  
-                                className='block input-text' 
+                {<form onSubmit={this.handleSubmited}  className='question-body'>
+                        <div>
+                            <textarea className='block input' 
                                 name="optionOne" 
                                 placeholder='Option One'
                                 required
                                 spellCheck="false"
-                                onChange={this.handleOptionOne}
-                                />
+                                onChange={this.handleOptionOne}/>
 
-                            <textarea  
-                                className='block input-text' 
+                            <textarea className='block input' 
                                 name="optionTwo"
                                 placeholder='Option Two'
                                 required
                                 spellCheck="false"
-                                onChange={this.handleOptionTwo}
-                                />
+                                onChange={this.handleOptionTwo}/>
                         </div>
 
                         <button className='button'>Submit</button>

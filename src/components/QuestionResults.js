@@ -49,7 +49,7 @@ class QuestionResults extends Component {
     return (
       <Fragment>
         <Navbar />
-        <div className="form-ans poll-details-form">
+        <div className="form-ans ">
           {answered ? (
             <div>
               <div className="grad1">

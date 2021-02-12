@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { auth } from '../actions/auth'
 import { withRouter } from 'react-router-dom'
+import { auth } from '../actions/auth'
+
 
 class Logout extends Component {
     handleLogout = () => {
@@ -14,19 +15,11 @@ class Logout extends Component {
         const { authedUser, avatar } = this.props
         return (
             <Fragment>
-                <ul className='nav nav-Logout'>
-                    <li onClick={this.handleLogout} className='nav-li'>
-                        Logout
-                    </li>
-                    <li className='user-name nav-li'>
-                        <img 
-                                    src={avatar}
-                                    alt={`Avatar of ${avatar}`}
-                                    className='profile-pic scale-down'/>
-                    </li>
-                    <li className='padding-zero username nav-li'>
-                       Hello {authedUser}
-                    </li>
+                <ul className='nav'>
+                    <li className='nav-li'onClick={this.handleLogout} >Logout</li>
+                    <li className='nav-li'>
+                        <img className='scale' src={avatar} alt={`Avatar of ${avatar}`}/></li>
+                    <li className='username nav-li'>Hello {authedUser}</li>
                 </ul>
             </Fragment>
         )

@@ -34,26 +34,18 @@ class Login extends Component {
                         <form onSubmit={this.handleLogin}>
                             <label className='sigin'>Please Sign in: </label>
                             <div className='form'>
-                                <img 
-                                    src={userSelected === '' 
-                                    ? 'http://www.masscue.org/wp-content/uploads/2017/03/male-no-image.jpg'
-                                    : users[userSelected].avatarURL}
-                                    alt={users[userSelected]}
-                                    className='pic'/> 
+                                <img src={userSelected === '' 
+                                     ? 'http://www.masscue.org/wp-content/uploads/2017/03/male-no-image.jpg'
+                                     : users[userSelected].avatarURL}
+                                     alt={users[userSelected]}
+                                     className='pic'/> 
                                     {/* {console.log(users)} */}
-                                <select 
-                                    className='select-user' 
-                                    onChange={(event) => this.onSelected(event.target.value)}>
+                                <select className='select-user' onChange={(event) => this.onSelected(event.target.value)}>
                                     <option value=""> Select User</option>
-                                    { 
-                                        Object.keys(users).map(user => 
-                                            <option className='test' key={user} value={user}>
-                                                {user}
-                                            </option>)
-                                    }
+                                    { Object.keys(users).map(user => 
+                                        <option className='test' key={user} value={user}>{user}</option>)}
                                 </select>                        
                             </div>
-
                             <button className='signin-button '>SIGN IN</button>
                         </form>
                     </div>
@@ -65,7 +57,7 @@ class Login extends Component {
 }
 
 function mapStateToProps ({ users }) {
-    console.log(users);
+    // console.log(users);
     return {
         users
     }

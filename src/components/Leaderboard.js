@@ -13,8 +13,8 @@ class Leaderboard extends Component {
                         <tr>
                             <th>Rank</th>
                             <th className='padding-right'>User</th>
-                            <th>Polls Created</th>
-                            <th>Polls Answered</th>
+                            <th>Questions Created</th>
+                            <th>Questions Answered</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,13 +24,13 @@ class Leaderboard extends Component {
                                    <td>{index + 1}</td>
                                    <td>
                                     <ul className='fix-nav nav nav-account'>
-                                        <li className='nav-li user-name'>
+                                        <li className='nav-li'>
                                             <img 
                                                 src={users[user.uid].avatarURL} 
                                                 alt={`Avatar for ${users[user.uid].name}`}
-                                                className='profile-pic scale-down-mid'/>
+                                                className=' scale-down-mid'/>
                                         </li>
-                                        <li className='nav-li user-name'>{users[user.uid].name}</li>
+                                        <li className='nav-li'>{users[user.uid].name}</li>
                                     </ul>
                                    </td>
                                    <td>{user.pollsCreated}</td>
