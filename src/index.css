@@ -356,54 +356,55 @@ p {
   }
   
    /* Leaderboard */
-   .table {
-    position: absolute;
-    margin: 0;
-    top: 250px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-spacing: 0px;
-    user-select: none;
+   .result-div{
+    width:600px;
+    border-radius: 10px;
+    border-color: rgb(89, 39, 182);
+    border-width: 30px;
+    margin-bottom: 20px;
+    border: #191919;
   }
-  .padding-right {
-    padding-right: 10px;
+  /* .res-cards{
+  text-align: center;} */
+  .res-li{
+    text-align: center;
+    list-style: none;
+    border: #191919;
+    width: 600px;
+    /* margin: 20px; */
   }
-  .fix-nav {
-    padding: 0;
-    margin: 0;
-    text-align:left;
+  .div-li{
+    text-align: center;
+    width: 600px;
+    margin: auto;
   }
-  
-  .fix-nav li {
-    padding-left: 0;
+  .res-ul-div{
+    text-align: center;
+    /* margin-left: 400px; */
   }
-
-  .nav-account {
-    margin-left: auto;
-    margin-right: 10px;
+  .border{
+    border: black;
+    border-width: 20px;
+    border-radius: 10px;
+    width: 600px;
+    height: 300px;
+    background-color: rgb(89, 39, 182);
+    margin: 20px;
   }
-  .scale-down-mid {
-    width: 35px !important;
-    height: 35px !important;
+  .res{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
-  td {
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    border-bottom: 1px solid #4D4D4E;
-    vertical-align: center;
-  }
-  th {
-    text-align: left;
-    padding-right: 100px;
-    padding-left: 0;
-    padding-bottom: 15px;
-  }
-
-tr, th {
-  border-bottom: 1px solid #999999;
-}
-.padding-right {
-  padding-right: 200px;
-}
+  .rank{
+    background-color: #F7C20F;
+    border-radius: 50%;
+    color: black;
+    width: 50px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 3px;
+  font-size: 12px;}

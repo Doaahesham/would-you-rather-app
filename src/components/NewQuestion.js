@@ -4,20 +4,20 @@ import Navbar from './Navbar'
 import { handleAddQuestion } from '../actions/shared'
 import { Redirect } from 'react-router-dom'
 
-class AddPoll extends Component {
+class NewQuestion extends Component {
     state = {
         optionOne: '',
         optionTwo: '',
         toHome: false,
     }
     
-    handleOptionOne = (event) => {
+    handleOp1 = (event) => {
         this.setState({
             optionOne: event.target.value
         })
     }
 
-    handleOptionTwo = (event) => {
+    handleOp2 = (event) => {
         this.setState({
             optionTwo: event.target.value
         })
@@ -53,14 +53,14 @@ class AddPoll extends Component {
                                 placeholder='Option One'
                                 required
                                 spellCheck="false"
-                                onChange={this.handleOptionOne}/>
+                                onChange={this.handleOp1}/>
 
                             <textarea className='block input' 
                                 name="optionTwo"
                                 placeholder='Option Two'
                                 required
                                 spellCheck="false"
-                                onChange={this.handleOptionTwo}/>
+                                onChange={this.handleOp2}/>
                         </div>
 
                         <button className='button'>Submit</button>
@@ -80,4 +80,4 @@ function mapDispatchToProps (dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddPoll)
+export default connect(null, mapDispatchToProps)(NewQuestion)

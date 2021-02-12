@@ -29,6 +29,7 @@ class Home extends Component {
                     <li className={ this.state.selectedPage === 'answered' ? 'active' : 'li-hover'}
                         onClick={() => {this.setState({ selectedPage: 'answered'})}}>Answered</li></ul>
                 {
+                    // no results
                     !loadingBar.default && Object.keys(unansweredQuestions).length === 0 && this.state.selectedPage === 'unanswered'
                     ? <p className='no-results'>No Results</p>
                     : null
@@ -65,11 +66,7 @@ function mapStateToProps ({ questions, authedUser, users, loadingBar }) {
         ? Object.keys(questions).filter(pollID => !answeredQuestions.includes(pollID)).sort((a,b) => questions[b].timestamp - questions[a].timestamp)
         : []
 
-    return {
-        answeredQuestions,
-        unansweredQuestions,
-        loadingBar,
-    }
+    return {loadingBar, answeredQuestions, unansweredQuestions,}
 }
 
 export default connect(mapStateToProps)(Home)

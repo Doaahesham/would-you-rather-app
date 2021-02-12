@@ -20,7 +20,7 @@ class TitleBar extends Component {
                 </li>
                 <li className='nav-li'>
                     <NavLink className='nav-li' to='/add' exact activeClassName='activeted'>
-                        Add Poll
+                        New Question
                     </NavLink>
                 </li>
             </ul>        

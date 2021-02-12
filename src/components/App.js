@@ -12,7 +12,7 @@ import { handleInitialQuestions } from '../actions/shared'
 
 class App extends Component {
   state = {
-    fetched: false, //data fetched or not
+    fetched: false,
   };
 
   componentDidMount() {
