@@ -7,7 +7,7 @@ import {
     _getUsers,
     _saveQuestion,
     _saveQuestionAnswer,
-  } from "../data api/_DATA";
+  } from "../dataApi/_DATA";
 
 
 //fn in home
